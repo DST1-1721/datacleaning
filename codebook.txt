@@ -1,0 +1,30 @@
+CODEBOOK for result set of Coursera "Getting and Cleaning Data" course.
+6/10/2020
+
+The dataset produced by run_analysis indicates average Samsung S sensor measures produced when a user is performing specified activities.  The dataset is a data table consisting of three columns:
+
+- activity: one of {STANDING, SITTING, LAYING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS}
+- measure: a mean or standard-deviation across a window of time during which the user is performing the activity.  Values of Measure are detailed below.
+- averagevalue: the average (mean) value of the measure across all samples taken while any subject user is performing the activity.  This includes but training and test subjects.
+
+Measure values specify a statistical estimate of readings from the Samsung S accelerometer or gyro sensor.  Measures taken in the time domain are prefixed by the letter "t"; measures in the frequency domain by the letter "f". The estimates of these measures present in this data set are either mean or standard deviation evaluated over a window of time around each time-series data point, with samples taken at  a rate of 50 Hz..  Some measures have separate components on the x, y and z directions. The following sensor measures are used in the result data: 
+
+- tGravityAcc
+- tBodyAccMag
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
+
+- tBodyAccJerk (x,y,z)
+- tBodyGyro (x,y,z)
+- tBodyGyroJerk (x,y,z)
+- fBodyAcc (x,y,z)
+- fBodyAccJerk (x,y,z)
+- fBodyGyro (x,y,z)
+
+The label values in the measure column of the result specify: the estimate (mean or std), the measure, and where appropriate the component, in lowercase and separated by underscores.  Thus, to specify the mean of tBodyGyro measures in the y dirction would have the measure label, "mean_tbodygyro_y".
