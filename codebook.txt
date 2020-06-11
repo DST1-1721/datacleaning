@@ -5,7 +5,7 @@ The dataset produced by run_analysis indicates average Samsung S sensor measures
 
 - activity: one of {STANDING, SITTING, LAYING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS}
 - measure: a mean or standard-deviation across a window of time during which the user is performing the activity.  Values of Measure are detailed below.
-- averagevalue: the average (mean) value of the measure across all samples taken while any subject user is performing the activity.  This includes but training and test subjects.
+- averagevalue: the average (mean) value of the measure across all samples taken, grouping by subject and activity.  This includes both training and test subjects.
 
 Measure values specify a statistical estimate of readings from the Samsung S accelerometer or gyro sensor.  Measures taken in the time domain are prefixed by the letter "t"; measures in the frequency domain by the letter "f". The estimates of these measures present in this data set are either mean or standard deviation evaluated over a window of time around each time-series data point, with samples taken at  a rate of 50 Hz..  Some measures have separate components on the x, y and z directions. The following sensor measures are used in the result data: 
 

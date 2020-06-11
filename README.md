@@ -11,4 +11,4 @@ Finally, the data points are categorized by activity, with average value for eac
 * measure and 
 * value
 
-Each combination of activity and mean- or standard-deviation- measure from the full data set is represented by a unique row in the resulting data table.  The value in each row is the average of all values for the specified measure observed while the activity was being performed across all subjects and trials.
+Each combination of activity and mean- or standard-deviation- measure from the full data set is represented by a unique row in the resulting data table.  The value in each row is the average of all values for the specified measure observed while the activity was being performed by a specific subject.
