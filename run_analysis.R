@@ -33,13 +33,19 @@ run_analysis <- function(data_dir=".") {
   training_activities_dt <- fread(paste0(dir,"/y_train.txt"))
   test_activities_dt <- fread(paste0(dir,"/y_test.txt"))
   activity_labels <- labels[,2][rbind(training_activities_dt,test_activities_dt)[,V1]]
-  activity_and_measure_stats_dt <- cbind(activity_labels, mean_and_std_measures_dt)
+  
+  training_subjects_dt <- fread(paste0(dir,"/subject_train.txt"))
+  test_subjects_dt <- fread(paste0(dir,"/subject_test.txt"))
+  subjects <- rbind(training_subjects_dt, test_subjects_dt)
+  colnames(subjects) <- 'subjects'
+  
+  activity_and_measure_stats_dt <- cbind(activity_labels, subjects, mean_and_std_measures_dt)
 
-  averages <- activity_and_measure_stats_dt[,lapply(.SD,mean), by=.(activity_labels)]
+  averages <- activity_and_measure_stats_dt[,lapply(.SD,mean), by=.(activity_labels, subjects)]
 
   tidy_set <- melt(averages,
-                   id.vars=colnames(averages)[1],
-                   measure.vars=colnames(averages)[-1])
-  colnames(tidy_set) <- c("activity","measure","averagevalue")
+                   id.vars=colnames(averages)[1:2],
+                   measure.vars=colnames(averages)[c(-1,-2)])
+  colnames(tidy_set) <- c("activity","subject","measure","averagevalue")
   tidy_set
 }
